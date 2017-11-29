@@ -26,6 +26,7 @@ Most of the algorithms optimize a cost function to get a set of parameter values
 1. Building the content cost function
 
     "Generated" image G should have similar content as the input image C. The most visually pleasing results will be generated if a layer is chosen in the middle of the network--neither too shallow nor too deep. Set the image C as the input to the pretrained VGG network, and run forward propagation. a(C) be the hidden layer activation in the layer you had chosen. Set G as the input, and run forward propagation. a(G) be the corresponding hidden layer activation. The cost function will be:
+    
     <img src = "https://raw.githubusercontent.com/tejaslodaya/neural-style-transfer/master/nb_images/equation1.png">
     
     When minimizing the content cost later, it helps make sure G has similar content as C

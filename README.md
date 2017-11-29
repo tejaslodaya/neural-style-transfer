@@ -1,28 +1,27 @@
-# NEURAL STYLE TRANSFER
+# Neural style transfer
 
 Neural Style Transfer is an algorithm that given a content image C and a style image S can generate novel artistic image
 
-### A few examples
-----------------------
-
-* The beautiful ruins of the ancient city of Persepolis (Iran) with the style of Van Gogh (The Starry Night)
-<img src="https://raw.githubusercontent.com/tejaslodaya/neural-style-transfer/master/nb_images/perspolis_vangogh.png">
+#### A few examples
+==================
+* The beautiful ruins of the ancient city of Persepolis (Iran) with the style of Van Gogh (The Starry Night) 
+  <img src="https://raw.githubusercontent.com/tejaslodaya/neural-style-transfer/master/nb_images/perspolis_vangogh.png">
 * The tomb of Cyrus the great in Pasargadae with the style of a Ceramic Kashi from Ispahan 
-<img src="https://raw.githubusercontent.com/tejaslodaya/neural-style-transfer/master/nb_images/pasargad_kashi.png">
+  <img src="https://raw.githubusercontent.com/tejaslodaya/neural-style-transfer/master/nb_images/pasargad_kashi.png">
 * A scientific study of a turbulent fluid with the style of a abstract blue fluid painting
-<img src = "https://raw.githubusercontent.com/tejaslodaya/neural-style-transfer/master/nb_images/circle_abstract.png">
+  <img src = "https://raw.githubusercontent.com/tejaslodaya/neural-style-transfer/master/nb_images/circle_abstract.png">
 
 
-### Transfer Learning
--------------------------------
+#### Transfer Learning
+=====================
 Neural Style Transfer (NST) uses a previously trained convolutional network, and builds on top of that. The idea of using a network trained on a different task and applying it to a new task is called transfer learning. 
 
 <img src = "https://raw.githubusercontent.com/tejaslodaya/neural-style-transfer/master/nb_images/vgg19.jpg">
 
 Following the original [NST paper](https://arxiv.org/abs/1508.06576), I have used the VGG network. Specifically, VGG-19, a 19-layer version of the VGG network. This model has already been trained on the very large ImageNet database, and thus has learned to recognize a variety of low level features (at the earlier layers) and high level features (at the deeper layers)
 
-### Cost function
--------------
+#### Cost function
+=================
 Most of the algorithms optimize a cost function to get a set of parameter values. In NST, optimize a cost function to get pixel values!
 1. Building the content cost function
 
@@ -55,8 +54,8 @@ Most of the algorithms optimize a cost function to get a set of parameter values
     
 Now, reduce the cost function and "generated" image will be a combination of content of content image and style of style image
          
-### Steps
------------
+#### Steps
+=========
 The following steps are to be followed to synthesize new images. Find correlation between the steps mentioned below and `nst_main.py`
 1. Create an Interactive tensorflow session
 2. Load the content image
@@ -70,15 +69,14 @@ The following steps are to be followed to synthesize new images. Find correlatio
     * Define the optimizer and the learning rate
 7. Initialize the TensorFlow graph and run it for a large number of iterations(200 here), updating the generated image at every step
 
-### NOTE
---------
+#### NOTE
+========
 1. Download pretrained VGG model from [here](http://www.vlfeat.org/matconvnet/pretrained/) and place it in `pretrained_model` folder. Change the `config.py` file to point to VGG19 model path 
 2. Run the `nst_main.py` on different style and content images placed in `images` folder. Change the `config.py` accordingly
 3. Content & style images can be found in `images` directory. Corresponding output images can be found in `output` directory
 
-### References
---------------
-
+#### References
+==============
 * [Leon A. Gatys, Alexander S. Ecker, Matthias Bethge, (2015). A Neural Algorithm of Artistic Style](https://arxiv.org/abs/1508.06576)
 * [Harish Narayanan, Convolutional neural networks for artistic style transfer](https://harishnarayanan.org/writing/artistic-style-transfer/)
 * [Log0, TensorFlow Implementation of "A Neural Algorithm of Artistic Style"](http://www.chioka.in/tensorflow-implementation-neural-algorithm-of-artistic-style)
